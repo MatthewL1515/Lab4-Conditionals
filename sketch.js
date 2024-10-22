@@ -22,7 +22,6 @@ function setup() {
   //   What parameters should it have, if any?
   // ----------------------
   createBall()
-  createRandomColor()
   createColorControl()
   
 }
