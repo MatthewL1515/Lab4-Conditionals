@@ -24,6 +24,7 @@ function setup() {
   // Task 1: Create Ball Code
   createBall()
   createRandomColor()
+  createColorControl()
 }
 
 function draw() {
@@ -54,6 +55,13 @@ function draw() {
     dy *= -1
   }
   
+  // Task 4a: Incrementally Change Color Channel
+  r += colorChangeRate * colorDirection
+  
+  // Task 4b: Constrain Colors
+  if ( r > 255 || r < 0) {
+    colorDirection *= -1
+  }
   
   // ----------------------
   // Task 2
@@ -135,6 +143,11 @@ function createBall() {
   radius = random(10,20)
   createRandomColor()
   noStroke()
+}
+
+function createColorControl() {
+  colorChangeRate = 2
+  colorDirection = 1
 }
 
 /** 
