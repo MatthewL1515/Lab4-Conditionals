@@ -14,16 +14,16 @@ function setup() {
   // ----------------------
   // Task 1 
   // All four of these function calls make the body of setup cleaner. 
-  //   They also are all related to the same idea– setting up the properties
+  //   They also are all related to the same idea– setting up the properties
   //   of the ball. 
   // Create a function called createBall that does all of these things.
   //   What parameters should it have, if any?
   // ----------------------
-  setRandomPosition()
-  setRandomVelocity()
-  radius = random(10,20)
+  
+  
+  // Task 1: Create Ball Code
+  createBall()
   createRandomColor()
-  noStroke()
   
 }
 
@@ -117,6 +117,14 @@ function createRandomBGColor() {
 // ----------------------
 function keyPressed() {
   createRandomBGColor()
+}
+
+function createBall() {
+  setRandomPosition()
+  setRandomVelocity()
+  radius = random(10,20)
+  createRandomColor()
+  noStroke()
 }
 
 /** 
