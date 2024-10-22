@@ -46,6 +46,7 @@ function draw() {
   } 
   
   // Task 3: Adjust boundary checks for ball to bounce on edge
+  // Multiplying ‘radius’ by 0.5 because the variable ‘radius’ is the size of the circle, not actual radius
    if ( x - 0.5*radius <= 0 || x + 0.5*radius >= width ) {
     dx *= -1
   }
