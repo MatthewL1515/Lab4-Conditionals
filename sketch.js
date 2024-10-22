@@ -45,6 +45,16 @@ function draw() {
   if( y < 0 || y > height) {
     dy *= -1
   }   
+  
+   // Task 3: Adjust boundary checks for ball to bounce on edge
+  if ( x - radius <= 0 || x + radius >= width ) {
+    dx *= -1
+  }
+  if ( y - radius <= 0 || y + radius >= height ) {
+    dy *= -1
+  }
+  
+  
   // ----------------------
   // Task 2
   // Remember that || means "or" and that && means "and"
