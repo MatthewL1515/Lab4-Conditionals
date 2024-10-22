@@ -46,10 +46,10 @@ function draw() {
   } 
   
   // Task 3: Adjust boundary checks for ball to bounce on edge
-  if ( x - radius <= 0 || x + radius >= width ) {
+   if ( x - 0.5*radius <= 0 || x + 0.5*radius >= width ) {
     dx *= -1
   }
-  if ( y - radius <= 0 || y + radius >= height ) {
+  if ( y - 0.5*radius <= 0 || y + 0.5*radius >= height ) {
     dy *= -1
   }
   
