@@ -108,7 +108,13 @@ function draw() {
 //   xMin, xMax, yMin, and yMax in the random calls
 // Then, in setup, change the setRandomPosition call to specify where your ball
 //   should roughly be at the start. 
-// function setRandomPosition( xMin = 0, yMin = 0, xMax = width, yMax = height) {
+
+
+// Task 5: Ball Random Position within Paramaters
+function setRandomPosition( xMin = 0, yMin = 0, xMax = width, yMax = height) {
+  x = random(xMin , xMax)
+  y = random(yMin, yMax)
+}
 function setRandomPosition() {
   x = random(width)
   y = random(height)  
