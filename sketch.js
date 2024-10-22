@@ -24,7 +24,6 @@ function setup() {
   // Task 1: Create Ball Code
   createBall()
   createRandomColor()
-  
 }
 
 function draw() {
@@ -33,16 +32,17 @@ function draw() {
   circle(x,y,radius)
   x += dx // x = x + dx
   y += dy // y = y + dy
-  if( x < 0 ) {
+  
+  
+  // Task 2: Consolidate boundary checks
+  if(( x < 0 || x > width ) && ( y < 0 || y > height)) {
     dx *= -1
-  }
-  if( x > width ) {
-    dx *= -1 
-  }
-  if( y < 0 ) {
     dy *= -1
   }
-  if( y > height ) {
+  if( x < 0 || x > width ) {
+    dx *= -1 
+  }
+  if( y < 0 || y > height) {
     dy *= -1
   }   
   // ----------------------
