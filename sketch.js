@@ -7,6 +7,8 @@ let r
 let g
 let b
 let bg
+let colorChangeRate
+let colorDirection
 
 function setup() {
   createCanvas(400, 400)
@@ -19,12 +21,10 @@ function setup() {
   // Create a function called createBall that does all of these things.
   //   What parameters should it have, if any?
   // ----------------------
-  
-  
-  // Task 1: Create Ball Code
   createBall()
   createRandomColor()
   createColorControl()
+  
 }
 
 function draw() {
@@ -33,7 +33,6 @@ function draw() {
   circle(x,y,radius)
   x += dx // x = x + dx
   y += dy // y = y + dy
-  
   
   // Task 2: Consolidate boundary checks
   if(( x < 0 || x > width ) && ( y < 0 || y > height)) {
@@ -45,9 +44,9 @@ function draw() {
   }
   if( y < 0 || y > height) {
     dy *= -1
-  }   
+  } 
   
-   // Task 3: Adjust boundary checks for ball to bounce on edge
+  // Task 3: Adjust boundary checks for ball to bounce on edge
   if ( x - radius <= 0 || x + radius >= width ) {
     dx *= -1
   }
@@ -109,12 +108,21 @@ function draw() {
 // Then, in setup, change the setRandomPosition call to specify where your ball
 //   should roughly be at the start. 
 
-
 // Task 5: Ball Random Position within Paramaters
 function setRandomPosition( xMin = 0, yMin = 0, xMax = width, yMax = height) {
   x = random(xMin , xMax)
   y = random(yMin, yMax)
 }
+
+// Task 1: Create a function called createBall
+function createBall() {
+  setRandomPosition()
+  setRandomVelocity()
+  radius = random(10,20)
+  createRandomColor()
+  noStroke()
+}
+
 function setRandomPosition() {
   x = random(width)
   y = random(height)  
@@ -135,25 +143,20 @@ function createRandomBGColor() {
   bg = color(random(255), random(255), random(255))
 }
 
+function createColorControl() {
+  colorChangeRate = 2
+  colorDirection = 1
+}
+
 // ----------------------
 // Task 6
 // Create a new ball here also
 // ----------------------
+
+// Task 6: Create another Ball
 function keyPressed() {
   createRandomBGColor()
-}
-
-function createBall() {
-  setRandomPosition()
-  setRandomVelocity()
-  radius = random(10,20)
-  createRandomColor()
-  noStroke()
-}
-
-function createColorControl() {
-  colorChangeRate = 2
-  colorDirection = 1
+  createBall()
 }
 
 /** 
